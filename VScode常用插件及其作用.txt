@@ -1,0 +1,4 @@
+koroFileHeader
+用于添加文件头注释、函数注释。
+添加文件头注释：    ctrl+alt+i
+添加函数头注释：    ctrl+alt+t
