@@ -28,3 +28,5 @@ highlight-icemode：
 indent-rainbow：
 突出显示缩进
 
+Markdown All in One:
+支持markdown编辑，并且是使用起来较为方便的markdown插件
