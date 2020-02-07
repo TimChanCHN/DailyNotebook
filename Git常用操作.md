@@ -43,6 +43,8 @@
    1. git log filename可以查看到对应哪个操作的commit_id
    2. git show commit_id即可以看到对应的修改内容
 
+## 6.删除远程仓库
+1. 进入github对应的仓库中，选择setting，拉下最底，delete该仓库即可。
 
 ## ERROR处理
 1. ! [rejected] master -> master (non-fast-forward)
