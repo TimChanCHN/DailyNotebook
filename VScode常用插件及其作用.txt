@@ -1,6 +1,12 @@
 打开命令窗口【W】：
 ctrl+shift+p
 
+把VS code的默认终端更改为git:
+1、打开命令窗口，输出setting，选择“open setting(json)"
+2、把语句更改为git的bash.exe路径：
+    "terminal.integrated.shell.windows": "D:\\Git\\Git\\bin\\bash.exe",
+3、重启VScode，打开终端，新建终端即可。
+
 koroFileHeader
 用于添加文件头注释、函数注释。
 添加文件头注释：    ctrl+alt+i
