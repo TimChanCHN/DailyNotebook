@@ -56,3 +56,16 @@
    > 解决方法：更新sshkey  
    1. ssh-keygen -t rsa -C "874797636@qq.com"
    2. cat ~/.ssh/id_rsa.puh，把新密钥更新到github上面即可
+
+3. error: failed to push some refs to 'git@github.com:TimChanCHN/Linux--JZ2440.git'
+   1. 该问题是本地仓库和远程仓库的readme.md有差异，需要合并两个分支
+      1. 合并分支命令：git pull --rebase origin master
+
+4. error: cannot pull with rebase: You have unstaged changes.  
+   error: please commit or stash them.
+   1. 该问题是有未提交的commit，导致无法正常合并
+   2. 使用下列几个命令，解决该问题：
+      1. git stash     --> 暂存当前正在进行的工作
+      2. git pull –rebase     -->   合并分支
+      3. git stash pop     -->      从Git栈中读取最近一次保存的内容
+   3. 后续的push等问题则会解决
