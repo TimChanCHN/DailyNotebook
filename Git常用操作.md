@@ -51,3 +51,8 @@
    1. git pull origin master --allow-unrelated-histories
    2. 重新add/commit
    3. git push origin master
+   
+2. fatal: Could not read from remote repository.
+   > 解决方法：更新sshkey  
+   1. ssh-keygen -t rsa -C "874797636@qq.com"
+   2. cat ~/.ssh/id_rsa.puh，把新密钥更新到github上面即可
