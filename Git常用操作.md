@@ -55,7 +55,7 @@
 2. fatal: Could not read from remote repository.
    > 解决方法：更新sshkey  
    1. ssh-keygen -t rsa -C "874797636@qq.com"
-   2. cat ~/.ssh/id_rsa.puh，把新密钥更新到github上面即可
+   2. cat ~/.ssh/id_rsa.pub，把新密钥更新到github上面即可
 
 3. error: failed to push some refs to 'git@github.com:TimChanCHN/Linux--JZ2440.git'
    1. 该问题是本地仓库和远程仓库的readme.md有差异，需要合并两个分支
@@ -66,6 +66,14 @@
    1. 该问题是有未提交的commit，导致无法正常合并
    2. 使用下列几个命令，解决该问题：
       1. git stash     --> 暂存当前正在进行的工作
-      2. git pull –rebase     -->   合并分支
-      3. git stash pop     -->      从Git栈中读取最近一次保存的内容
+      2. 合并分支命令：git pull --rebase origin master
+      3. git pull –rebase     -->   合并分支
+      4. git stash pop     -->      从Git栈中读取最近一次保存的内容
    3. 后续的push等问题则会解决
+
+5. 现象：提交的可能是文件夹，但是push后进去github/gitlab查看，会发现文件夹名称有点特别，并且点击之后不能进去，此种情况不会报error
+   1. 这种现象的原因是提交的文件夹是一个本地的git仓库，即包含了.git文件
+   2. 解决方法：
+      1. 先删除远程仓库的文件夹： git rm -r --cached
+      2. 删除本地仓库的.git文件
+      3. 重新提交该文件夹即可
