@@ -1,0 +1,38 @@
+打开命令窗口【W】：
+ctrl+shift+p
+
+把VS code的默认终端更改为git:
+1、打开命令窗口，输出setting，选择“open setting(json)"
+2、把语句更改为git的bash.exe路径：
+    "terminal.integrated.shell.windows": "D:\\Git\\Git\\bin\\bash.exe",
+3、重启VScode，打开终端，新建终端即可。
+
+koroFileHeader
+用于添加文件头注释、函数注释。
+添加文件头注释：    ctrl+alt+i
+添加函数头注释：    ctrl+alt+t
+
+
+TODO:
+写代码过程中，突然发现一个Bug，但是又不想停下来手中的活，便使用TODO，格式：
+//TODO:
+//FIXME:
+
+GitLens:
+将光标放置在代码的当前行，可以看到这样代码的提交者是谁，以及提交时间。这一点，是 GitLens 最便捷的功能;
+查看某个 commit 的代码改动记录;
+查看不同的分支;
+可以将两个 commit 进行代码对比;
+甚至可以将两个 branch 分支进行整体的代码对比。这一点，简直是 GitLens 最强大的功能。当我们在不同分支review代码的时候，就可以用到这一招。
+
+Bracket Pair Colorizer 2：
+突出显示成对的括号.
+
+highlight-icemode：
+选中相同的代码时，让高亮显示更加明显.
+
+indent-rainbow：
+突出显示缩进
+
+Markdown All in One:
+支持markdown编辑，并且是使用起来较为方便的markdown插件
