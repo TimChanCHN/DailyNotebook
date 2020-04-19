@@ -1,5 +1,11 @@
 # 日常笔记
-1. Git常用操作
-2. markdown基本操作
-3. VScode常用操作
-4. VScode建立本地工程过程
+1. 正则表达式
+2. C/C++
+   1. C/C++随手笔记
+3. VSCode
+   1. VSCode常见插件
+   2. windows中在vscode中建立项目的流程
+4. tools
+   1. GIT常用操作
+   2. markdown文件的常见编辑方式
+   3. vim编辑器的常用操作
