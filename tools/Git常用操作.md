@@ -22,7 +22,7 @@
 - git status                     :  查看git状态
 - git reflog                     :  记录每次的git命令
 - git diff HEAD – file           :  查看工作区与版本库区别
-- git checkout – file            :  丢弃工作区的修改 未add时，实质用版本库里的版本替换工作区的版本
+- git checkout -– file           :  丢弃工作区的修改,未add时，实质用版本库里的版本替换工作区的版本
 - git reset HEAD file            :  已经add后，暂存区修改撤销
 - git clone git@github.com:账号名/项目名.git                      :  克隆远程仓库到本地库
 - git remote add origin git@github.com:账号名/项目名.git          ： 关联远程库，名字origin
