@@ -20,7 +20,7 @@
 ## 3.Git把本地仓库文件更新到远程仓库：  
 备注：  该操作即可以把文件更新送到云端，也可以把新创立文件推到云端
 - 在本地仓库打开git bash
-- git pull:  把远程仓库拉下
+- git pull:  把远程仓库拉下，假如远程仓库有更新，在本地还可以使用该命令使本地仓库同步，但是无法提前处理冲突
 - git status: 查看本地仓库的更新
 - git add <file> : 增加file
 - git commit -m "text"  :  提交
@@ -45,6 +45,24 @@
 
 ## 6.删除远程仓库
 1. 进入github对应的仓库中，选择setting，拉下最底，delete该仓库即可。
+
+## 7.合并分支
+> 合并分支是指把本地仓库和远程仓库内容合并，使其内容一致。如果两个仓库内容有差别，在进行某些操作时容易出错。
+1. git pull
+   > 获取最新代码到本地，并自动合并到当前分支，但这是直接合并，可能会把本地更新覆盖。
+
+2. git fetch+merge
+```bash
+1) 查询远程版本
+git remote -v
+2) 获取最新代码到本地
+git fetch origin branchname      // branchname:分支名称
+3) 查看版本差异
+git log -p master..origin/master
+4) 合并最新代码到本地分支
+git merge origin/master
+
+```
 
 ## ERROR处理
 1. ! [rejected] master -> master (non-fast-forward)
