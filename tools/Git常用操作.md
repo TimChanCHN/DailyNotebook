@@ -9,22 +9,49 @@
 5. [VS Code编辑markdown](https://www.cnblogs.com/shawWey/p/8931697.html)  
 6. [Git和本地连接，需要把本地仓库(电脑)和对应的云端链接起来](https://blog.csdn.net/haochaoguo1988/article/details/82662475)
 
-## 2.Git本地仓库和远程仓库删除文件操作简述：
+## 2.Git操作指令
+1. 常见操作
+- git init                       :  创建仓库
+- git pull                       :  抓起远程库最新后才能提交
+- git push origin master         :  将master分支push到远程仓库
+- git add file                   :  保存暂存区
+- git commit file -m “commit”    :  提交git 默认分支master
+- git rm file                    :  删除文件，再提交
+- git log                        :  提交记录
+- git remote -v                  :  查看远程库信息
+- git status                     :  查看git状态
+- git reflog                     :  记录每次的git命令
+- git diff HEAD – file           :  查看工作区与版本库区别
+- git checkout – file            :  丢弃工作区的修改 未add时，实质用版本库里的版本替换工作区的版本
+- git reset HEAD file            :  已经add后，暂存区修改撤销
+- git clone git@github.com:账号名/项目名.git                      :  克隆远程仓库到本地库
+- git remote add origin git@github.com:账号名/项目名.git          ： 关联远程库，名字origin
+2. 分支操作
+- git branch                     :  查看分支
+- git checkout -b dev            :  创建分支dev
+- git checkout master            :  切换回master分支
+- git checkout -b dev origin/dev ： 拉取远程库的dev分支到本地，若无dev则重新创建一个
+- git branch -d dev              :  删除分支
+- git merge dev                  :  合并分支
+- git checkout -b dev origin/dev :  拉取远程库的dev分支到本地
+- git merge –no-ff -m “merge with no-ff” dev                   :  冲突合并
+- git branch –set-upstream dev origin/dev                      :  抓取前要本地分支与远程分支关联
+3. 暂存区操作
+- git stash                      :  保存工作现场  
+- git stash list                 :  查看工作现场
+- git stash pop                  :  恢复并删除现场的备份
+- git stash apply stash@{0}      :  恢复指定现场
+4. 版本回退
+- git reset –hard HEAD^          :  回退上个版本
+- git reset –hard 9789676        :  回退指定版本
+
+## 3.Git本地仓库和远程仓库删除文件操作简述：
 - 在本地仓库打开git bash
 - git pull (origin master)  :  把远程仓库拉下
 - dir                     ：  查看仓库文件内容；
 - git rm -r --cached <file>:  删除目标文件（可以是多个文件）
 - git commit -m "text"    :   提交操作
 - git push -u origin master  ：  进入远程仓库  
-
-## 3.Git把本地仓库文件更新到远程仓库：  
-备注：  该操作即可以把文件更新送到云端，也可以把新创立文件推到云端
-- 在本地仓库打开git bash
-- git pull:  把远程仓库拉下，假如远程仓库有更新，在本地还可以使用该命令使本地仓库同步，但是无法提前处理冲突
-- git status: 查看本地仓库的更新
-- git add <file> : 增加file
-- git commit -m "text"  :  提交
-- git push origin master: 推上远程仓库
 
 ## 4.分支操作
 1. git branch -av	           ：	查看分支情况
