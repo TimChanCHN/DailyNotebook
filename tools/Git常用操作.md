@@ -28,7 +28,7 @@
 - git remote add origin git@github.com:账号名/项目名.git          ： 关联远程库，名字origin
 2. 分支操作
 - git branch                     :  查看分支
-   > -av                         :  同时查看远程和本地分支情况，红色字体为远程分支，绿色是本地当前活动分支，灰色为本地其他分支
+   > -av                         :  同时查看远程和本地分支情况，红色字体为远程分支，绿色是本地当前活动分支，灰色为本地其他分支  
    > -v                          :  查看本地分支
 - git checkout -b dev            :  创建分支dev
 - git checkout master            :  切换回master分支
