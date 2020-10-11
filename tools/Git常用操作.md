@@ -12,6 +12,7 @@
 ## 2.Git操作指令
 1. 常见操作
 - git init                       :  创建仓库
+- git rev-parse HEAD             :  获取git commit id
 - git pull                       :  抓起远程库最新后才能提交
 - git push origin master         :  将master分支push到远程仓库
 - git add file                   :  保存暂存区
@@ -28,9 +29,11 @@
 - git remote add origin git@github.com:账号名/项目名.git          ： 关联远程库，名字origin
 2. 分支操作
 - git branch                     :  查看分支
+   > -av                         :  同时查看远程和本地分支情况，红色字体为远程分支，绿色是本地当前活动分支，灰色为本地其他分支  
+   > -v                          :  查看本地分支
 - git checkout -b dev            :  创建分支dev
 - git checkout master            :  切换回master分支
-- git checkout -b dev origin/dev ： 拉取远程库的dev分支到本地，若无dev则重新创建一个
+- git checkout -b dev origin/dev ： 拉取远程库的dev分支到本地，若无dev则重新创建一个 
 - git branch -d dev              :  删除分支
 - git merge dev                  :  合并分支
 - git checkout -b dev origin/dev :  拉取远程库的dev分支到本地
@@ -89,6 +92,32 @@ git log -p master..origin/master
 4) 合并最新代码到本地分支
 git merge origin/master
 
+```
+
+## 8.放弃本地修改
+1. 未git add提交代码
+```bash
+1) 放弃某个文件的修改
+git checkout -- filename
+2) 放弃全部文件的修改
+git checkout .
+```
+
+2. 已经使用了git add,未使用git commit
+```bash
+1) 放弃某个文件的修改
+git reset HEAD filename
+
+2) 放弃全部文件的修改
+git reset HEAD 
+```
+
+3. 已经使用了git commit
+```bash
+1) 回退到上一次commit的状态
+git reset --hard HEAD^
+2) 回退到任意版本的commit
+git reset --hard commit id
 ```
 
 ## ERROR处理

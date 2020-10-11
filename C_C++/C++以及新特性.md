@@ -542,6 +542,12 @@
 14. std::stack
     1.  stack容器直接在C++实现迭代器的功能。
     2.  基本功能: begin(), end(), empty(), push(), pop()
+    ```c++
+    // 当需要调用栈顶元素时，不能使用pop()，该函数的作用是弹出栈顶元素，应该使用.top()
+    stack<string> s;
+    s.top();                    //栈的栈顶元素
+    
+    ```
 
 15. std::list
     1.  链表操作
@@ -556,6 +562,7 @@
    3. 实例：
    ```c++
    string s = "123";
+   s.size();                           // size()等同于C标准库的strlen()，不包括字符串结束符' '
    printf("s:%s\n",s.c_str());         // c_str是指把const char*类型的数据转换为char*类型数据
 
    s.substr(pos, n);                   // 从string的pos为起始位置，截取n个字符的字符串
