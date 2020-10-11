@@ -323,6 +323,7 @@
     std::vector<int> vec(100,1);                    //有100个元素并且值为1
     std::vector<std::string> vec{"a","b","c"};      //单纯地初始化
     std::vector<int>::iterator iter = nVec.begin();   //指向vector其中一个元素
+    vec.front();                                    // 指向vector的第一个元素
 
     int i = 5;
     vec.push_back(i);                               // 把i压倒vec的尾端，这也是vector的赋值方法
@@ -432,6 +433,7 @@
     // 注销智能指针, use_cout()会减一
     ptr2.reset();
    ```
+
    4. shared_ptr每指向同一对象时，会析构一次对象，会导致多次释放同一内存，利用`enable_shared_from_this`和`shared_from_this`可以避免该问题
    ```c++
     class student : public enable_shared_from_this<student>
@@ -525,6 +527,7 @@
     1.  可以看成一个序列，插入一个数，删除一个数都能够在O(logn)的时间内完成，而且他能时刻保证序列中的数是有序的，而且序列中可以存在重复的数。
    ```c++
       multiset<int> multi;
+      /* .begin(), .end()等基本函数均会存在 */
 
       for( int i = 0; i < 10; i++ )
       {   
@@ -533,7 +536,15 @@
       }
    ```
 
+13. std::set
+    1.  set的序列中不能存在重复的数，其余均和multiset一致
 
+14. std::stack
+    1.  stack容器直接在C++实现迭代器的功能。
+    2.  基本功能: begin(), end(), empty(), push(), pop()
+
+15. std::list
+    1.  链表操作
 
 ## 2. 关键字
 1. auto
@@ -546,6 +557,14 @@
    ```c++
    string s = "123";
    printf("s:%s\n",s.c_str());         // c_str是指把const char*类型的数据转换为char*类型数据
+
+   s.substr(pos, n);                   // 从string的pos为起始位置，截取n个字符的字符串
+   s.find_first_of(char);         // 查找string中第一个char出现的位置
+   s.find_last_of(char);               // 查找string中的最后一个char位置
+   s.find(c/string, pos);                   // 查找string从pos开始，是否存在c/string，不存在返回string::npos    
+   // string转换大小写
+   transform(s.begin(), s.end(), s.begin(), ::toupper);   
+   transform(s.begin(), s.end(), s.begin(), ::tolower);   
    ```
 
 
@@ -568,6 +587,29 @@
    assert(expression);
    ```
 
+3. reverse
+   1. reverse函数功能是逆序（或反转），多用于字符串、数组、容器。无返回值。
+   2. 头文件：#include <algorithm>
+   3. 例子：
+   ```c++
+      string s;
+      reverse(s.begin(), s.end());        // s已经实现了逆序
+   ```
+
+4. sort
+   1. 作用：参数1,2限定了一个容器的范围，sort函数就是对该容器进行排序，如果不输入参数3，默认是升序排序，可以通过对参数3进行自定义，从而可以自定义容器的排序方式
+   2. 函数形式：sort(first_pointer,first_pointer+n,cmp)
+   3. 例子：
+   ```c++
+   bool compare( const string &s1, &s2)
+   {
+      return s1 < s2;            // 升序
+      return s1 > s2;            // 降序
+   }
+   sort(first_pointer,first_pointer+n,cmp);
+   // 引申：stable_sort, 使用会和sort一致，但是如果两个值相等时，不会交换位置
+   stable_sort(first_pointer,first_pointer+n,cmp);
+   ```
 
 ## 4. 备注
 1. 使用gcc5.4编译c++新特性时，需要添加条件：`-std=c++11`；老版本gcc使用`-std=c++`即可。
