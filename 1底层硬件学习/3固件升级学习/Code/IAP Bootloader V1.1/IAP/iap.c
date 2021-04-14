@@ -22,6 +22,7 @@ u32 iapbuf[512]; 	//2K字节缓存
 //appxaddr:应用程序的起始地址
 //appbuf:应用程序CODE.
 //appsize:应用程序大小(字节).
+// 该函数最多只能写2k数据，否则会多次刷新FLASH，刷掉旧数据
 void iap_write_appbin(u32 appxaddr,u8 *appbuf,u32 appsize)
 {
 	u32 t;
