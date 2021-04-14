@@ -1,6 +1,7 @@
 # GDB使用说明
 [参考链接1](https://blog.csdn.net/horotororensu/article/details/82256832)
 [参考链接2](https://blog.csdn.net/niyaozuozuihao/article/details/91802994)
+[利用GDB解决coredump问题](https://zhuanlan.zhihu.com/p/46605905)
 1. 启动
   1. 编译时需要加上`-g`选项；
   2. 若是用Makefile构建程序，则在`CFLAGS`中添加`-g`选项：`CFLAGS := -Wall -O2 -g`
