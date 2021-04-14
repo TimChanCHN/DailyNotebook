@@ -33,6 +33,7 @@ sudo apt install cmake
 		> target:在生成的makefile中的一个依赖
 		> COMMAND:完成改目标所要执行的操作，生成make target即会执行这些命令
 		> dependences:执行该命令所需要的依赖
+	12. add_definitions(-DVAR):定义宏VAR，从而程序可以直接获取由cmake定义的变量
 
 ## 3. 其他设置
 1. 添加编译器选项
