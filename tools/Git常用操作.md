@@ -46,7 +46,7 @@
 - git stash apply stash@{0}      :  恢复指定现场
 4. 版本回退
 - git reset –hard HEAD^          :  回退上个版本
-- git reset –hard 9789676        :  回退指定版本
+- git reset –hard commitid       :  跳转去指定版本，指定HEAD指针指向对应的代码版本，HEAD指针是在本地的代码
 
 ## 3.Git本地仓库和远程仓库删除文件操作简述：
 - 在本地仓库打开git bash
