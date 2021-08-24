@@ -17,6 +17,7 @@
 - git push origin master         :  将master分支push到远程仓库
 - git add file                   :  保存暂存区
 - git commit file -m “commit”    :  提交git 默认分支master
+- git commit --amend             :  若提交了一次，后面发现有遗漏，在git add file之后，使用该命令(默认就是上次提交的commit id)，可以把本次提交归并到上次提交中
 - git rm file                    :  删除文件，再提交
 - git log                        :  提交记录
 - git remote -v                  :  查看远程库信息
