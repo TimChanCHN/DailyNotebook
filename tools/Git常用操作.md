@@ -135,6 +135,8 @@ git reset --hard commit id
 3. error: failed to push some refs to 'git@github.com:TimChanCHN/Linux--JZ2440.git'
    1. 该问题是本地仓库和远程仓库的readme.md有差异，需要合并两个分支
       1. 合并分支命令：git pull --rebase origin master
+   2. 该问题的出现，一般是出现在多人协作的git项目，用户A/B同时拉下远程项目，当A操作了commit后，B操作commit且push，而后A再push，则会出现这种情况
+   3. 为避免这种情况，每次commit之前，都先pull，或者fetch+merge
 
 4. error: cannot pull with rebase: You have unstaged changes.  
    error: please commit or stash them.
