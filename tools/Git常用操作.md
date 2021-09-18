@@ -48,6 +48,9 @@
 4. 版本回退
 - git reset –hard HEAD^          :  回退上个版本
 - git reset –hard commitid       :  跳转去指定版本，指定HEAD指针指向对应的代码版本，HEAD指针是在本地的代码
+5. 补丁操作
+- git apply $(dir/xxx.patch/diff)   :  打补丁到当前目录下
+- git diff > xxx.patch              :  在当前目录下生成补丁
 
 ## 3.Git本地仓库和远程仓库删除文件操作简述：
 - 在本地仓库打开git bash
