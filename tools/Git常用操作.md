@@ -8,6 +8,7 @@
 4. [本地添加文件至云端--操作2](https://blog.csdn.net/tangxiujiang/article/details/80463325)
 5. [VS Code编辑markdown](https://www.cnblogs.com/shawWey/p/8931697.html)  
 6. [Git和本地连接，需要把本地仓库(电脑)和对应的云端链接起来](https://blog.csdn.net/haochaoguo1988/article/details/82662475)
+7. [提交PR的流程](https://www.cnblogs.com/dsxniubility/p/4460834.html)
 
 ## 2.Git操作指令
 1. 常见操作
@@ -39,6 +40,7 @@
 - git checkout -b dev origin/dev :  拉取远程库的dev分支到本地
 - git merge –no-ff -m “merge with no-ff” dev                   :  冲突合并
 - git branch –set-upstream dev origin/dev                      :  抓取前要本地分支与远程分支关联
+
 3. 暂存区操作
 - git stash                      :  保存工作现场  
 - git stash list                 :  查看工作现场
@@ -54,6 +56,7 @@
 - dir                     ：  查看仓库文件内容；
 - git rm -r --cached <file>:  删除目标文件（可以是多个文件）
 - git commit -m "text"    :   提交操作
+- git commit --amend       :  commit后，若有新修改合并到这个commit里面，使用该命令
 - git push -u origin master  ：  进入远程仓库  
 
 ## 4.分支操作
@@ -64,6 +67,7 @@
 5. git checkout <本地分支>	    ：	 切换到本地分支
 6. git push origin <远程分支>	：	 推送代码到远程分支
 7. git branch -d <本地分支>	    ：	 删除本次分支
+8. git push --set-upstream origin <分支名>	:	把本地创建的分支push到远程
 
 ## 5.查看文件修改内容
 1. 可视化方式
