@@ -34,6 +34,11 @@
    enable + <断点编号>:使能指定断点,断点编号为空，指使能全部断点
   ```
   10. 查看源码:l
-    
-    
+3. 工具链使用gdb单步调试
+   1. 单片机使用工具链进行开发，而不使用IDE时，如何实现单步调试？
+      1. 使用`openocd+arm-none-eabi-gdb+J-Link/StLink`
+   2. 过程
+      1. 打开一个终端1，输入`openocd -f ../sdk/scripts/openocd/stlink-v2.cfg -f ../sdk/scripts/openocd/hk32f1x.cfg -c init -c 'reset halt'`
+      2. 再打开一个终端2，执行gdb命令`arm-none-eabi-gdb`
+      3. 在终端2，输入`target remote :3333`，而后在终端1看到`accepting 'gdb' connection on tcp/3333`等信息，说明链接成功，可以利用gdb进行单步调试
     
