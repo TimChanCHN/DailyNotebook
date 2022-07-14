@@ -18,6 +18,7 @@
 - git push origin master         :  将master分支push到远程仓库
 - git add file                   :  保存暂存区
 - git commit file -m “commit”    :  提交git 默认分支master
+- git commit --amend             :  若提交了一次，后面发现有遗漏，在git add file之后，使用该命令(默认就是上次提交的commit id)，可以把本次提交归并到上次提交中
 - git rm file                    :  删除文件，再提交
 - git log                        :  提交记录
 - git remote -v                  :  查看远程库信息
@@ -48,7 +49,10 @@
 - git stash apply stash@{0}      :  恢复指定现场
 4. 版本回退
 - git reset –hard HEAD^          :  回退上个版本
-- git reset –hard 9789676        :  回退指定版本
+- git reset –hard commitid       :  跳转去指定版本，指定HEAD指针指向对应的代码版本，HEAD指针是在本地的代码
+5. 补丁操作
+- git apply $(dir/xxx.patch/diff)   :  打补丁到当前目录下
+- git diff > xxx.patch              :  在当前目录下生成补丁
 
 ## 3.Git本地仓库和远程仓库删除文件操作简述：
 - 在本地仓库打开git bash
@@ -138,6 +142,8 @@ git reset --hard commit id
 3. error: failed to push some refs to 'git@github.com:TimChanCHN/Linux--JZ2440.git'
    1. 该问题是本地仓库和远程仓库的readme.md有差异，需要合并两个分支
       1. 合并分支命令：git pull --rebase origin master
+   2. 该问题的出现，一般是出现在多人协作的git项目，用户A/B同时拉下远程项目，当A操作了commit后，B操作commit且push，而后A再push，则会出现这种情况
+   3. 为避免这种情况，每次commit之前，都先pull，或者fetch+merge
 
 4. error: cannot pull with rebase: You have unstaged changes.  
    error: please commit or stash them.
